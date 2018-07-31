@@ -1,10 +1,10 @@
-/*BANNER*/
+/*Body*/
 *{
 	padding: 0 !important;
 	margin: 0 !important;
 	font-size: 1rem;
 }
-
+/*BANNER*/
 .myBanner{
 	background-color: #dc3545;
 	width: 100%;
@@ -15,9 +15,68 @@
 	font-size: 2rem;
 }
 
+/*Banner font*/
 .myBanner h1{
 	font-size: 2rem;
 	margin: auto;
 }
 
 /*CALENDAR*/
+/*Dates normal style*/
+.normDates{
+   	background: #c6d89d; 
+   	color:#5e6c6c;
+  }
+
+/*Blocked dates*/
+.invalidDates{
+	background: lightgray !important;
+	color:lightgray !important;
+  }
+
+/*Used for highlighted weekends*/
+.highlighted{
+	background: yellow !important;
+}
+
+/*Painting of orange the hollidays*/
+.holliday{
+	background-color: #fe7b02 !important;
+	color:#5e6c6c !important;
+}
+
+
+/*Hidding dates of next month that autoshow in boostrap datepicker*/
+.disabled-date{
+	background: lightgray !important;
+	color:lightgray !important;
+}
+
+.year{
+	background: #c6d89d !important; 
+}
+
+.focused{
+	background: #c6d89d !important;
+}
+.century{
+	background: #c6d89d !important;
+}
+
+/*Hidding dates of next month that autoshow in boostrap datepicker*/
+.disabled{
+	background: lightgray !important;
+	color:lightgray !important;
+}
+
+/*Hidding dates of next month that autoshow in boostrap datepicker*/
+ .new{
+ 	background: lightgray !important;
+	color:lightgray !important;
+ }
+
+ /*Hidding dates of next month that autoshow in boostrap datepicker*/
+ .old{
+ 	background: lightgray !important;
+	color:lightgray !important;
+ }
