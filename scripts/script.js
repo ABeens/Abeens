@@ -78,6 +78,9 @@ function MarkDay(dt) {
     if (isHolliday) {
         return { classes: 'holliday' };
     }
+    if(dt<minDate || dt>maxDayDate){
+    	return {classes: 'old'};
+    }
 }
 
 /*Gets the today date*/
