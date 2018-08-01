@@ -1,83 +1,50 @@
 <!DOCTYPE html>
+
 <html>
 <head>
-<!--MyCss-->
-<link rel="stylesheet" type="text/css" href="./css/styles.css">
-<!--Jquery-->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<!--Boostrap-->
-<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
-<!--Boostrap datepicker-->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.4/js/bootstrap-datepicker.min.js" crossorigin="anonymous"></script>
-<link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.4/css/bootstrap-datepicker.standalone.min.css" rel="stylesheet" crossorigin="anonymous">
-	<title>
-		Calendar Excercise
-	</title>
+    <!--Jquery-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <!--Boostrap-->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    <!--Boostrap datepicker-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.4/js/bootstrap-datepicker.min.js" crossorigin="anonymous"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.4/css/bootstrap-datepicker.standalone.min.css" rel="stylesheet" crossorigin="anonymous">
+    <!--Boostrap calendar-->
+    <!--MyCss and script-->
+    <link rel="stylesheet" type="text/css" href="./css/styles.css">
+    <script src="./scripts/script.js"></script>
+    <title>
+        Calendar Excercise
+    </title>
 </head>
 <body>
-	<div class="myBanner">
-		<h1>Calendars</h1>
-	</div>
-	<div class="container-fluid pl-4 pr-4">
-		<div class="row mt-3">
-			<div class="col col-lg-3 p-3">
-				<label>Start Date</label>
-				<input id="startDatePicker" class="form-control" type="text" name="Start Date">
-			</div>
-			<div class="col col-lg-3 p-3">
-				<label>Days To Show</label>
-				<input class="form-control" type="text" name="DaysToShow">
-			</div>
-			<div class="col col-lg-3 p-3">
-				<label>Days To Show</label>
-				<input class="form-control" id="inputError" type="text" name="DaysToShow">
-			</div>
-			<div class="col col-lg-1 p-3 pull-right">
-				<br/>
-				<button class="btn btn-danger form-control">Process</button>
-			</div>
-		</div>
+    <div class="myBanner">
+        <h1>Calendars</h1>
+    </div>
+    <div class="container-fluid pl-4 pr-4">
+        <div class="row mt-3">
+            <div class="col col-lg-3 p-3">
+                <label>Start Date</label>
+                <input id="startDatePicker" class="form-control" type="text" name="StartDate">
+            </div>
+            <div class="col col-lg-3 p-3">
+                <label>Days To Show</label>
+                <input id="daysToShow" class="form-control" type="text" name="DaysToShow">
+            </div>
+            <div class="col col-lg-3 p-3">
+                <label>Country Code</label>
+                <input class="form-control" id="countryCode" type="text" name="CountryCode">
+            </div>
+            <div class="col col-lg-1 p-3 pull-right">
+                <br />
+                <button class="btn btn-danger form-control" onclick="Process()">Process</button>
+            </div>
+        </div>
+    </div>
+    <div id="resultDP" class="container-fluid pl-4 pr-4">
 
-		<div class="row mt-3">
-			<div class="col col-lg-12 p-3">
-				<div class="col col-lg-3 p-3">
-					<label>Start Date</label>
-					<input id="resultDatePicker" class="form-control" type="text" name="Start Date">
-				</div>
-			</div>
-		</div>
-	</div>
-	<script type="text/javascript">
-    $(document).ready(function(){
-      /*Startdate DatePicker*/
-      var start_date=$('input[id="startDatePicker"]');
-      var container1=$('.bootstrap-iso form').length>0 ? $('.bootstrap-iso form').parent() : "body";
-      var options={
-        format: 'mm/dd/yyyy',
-        container: container1,
-        todayHighlight: true,
-        autoclose: true,
-      };
-      start_date.datepicker(options);
-    
-    /*Result DatePicker*/
-      var resultDatePicker=$('input[id="resultDatePicker"]');
-      var container2=$('.bootstrap-iso form').length>0 ? $('.bootstrap-iso form').parent() : "body";
-      var options={
-        format: 'mm/dd/yyyy',
-        container: container2,
-        todayHighlight: true,
-        autoclose: true,
-        startDate:'08-01-2018',
-        endDate:'08-20-2018',
-        daysOfWeekDisabled:[0,6],
-        daysOfWeekHighlighted:[0,6],
-        datesDisabled:['08-17-2018']
-      };
-      resultDatePicker.datepicker(options);
-    })
-
-	</script>
+    </div>
 </body>
 </html>
