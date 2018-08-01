@@ -21,29 +21,12 @@
 	margin: auto;
 }
 
-/*CALENDAR*/
-/*Dates normal style*/
-.normDates{
-   	background: #c6d89d; 
-   	color:#5e6c6c;
-  }
-
+/*CALENDARS*/
 /*Blocked dates*/
 .invalidDates{
 	background: lightgray !important;
 	color:lightgray !important;
   }
-
-/*Used for highlighted weekends*/
-.highlighted{
-	background: yellow !important;
-}
-
-/*Painting of orange the hollidays*/
-.holliday{
-	background-color: #fe7b02 !important;
-	color:#5e6c6c !important;
-}
 
 
 /*Hidding dates of next month that autoshow in boostrap datepicker*/
@@ -63,11 +46,29 @@
 	background: #c6d89d !important;
 }
 
-/*Hidding dates of next month that autoshow in boostrap datepicker*/
+/*Dates normal style*/
+.day{
+   	background: #c6d89d !important; 
+   	color:#5e6c6c !important;
+  }
+
+/*Used for highlighted weekends*/
+.highlighted{
+	background: yellow !important;
+}
+
+/*Painting of orange the hollidays*/
+.holliday{
+	background-color: #fe7b02 !important;
+	color:#5e6c6c !important;
+}
+
+  /*Hidding dates of next month that autoshow in boostrap datepicker*/
 .disabled{
-	background: lightgray !important;
+ 	background: lightgray !important;
 	color:lightgray !important;
 }
+
 
 /*Hidding dates of next month that autoshow in boostrap datepicker*/
  .new{
