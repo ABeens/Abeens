@@ -158,6 +158,7 @@ function Process(){
 		alert('Need fill the country code field');
 		return false;
 	}
+	/*Paso las validaciones*/
 	$('#resultDP').empty();
 	maxDayDate= GetEndDate(minDate,daysToShow);
 	AddDatePickers(minDate,maxDayDate);
