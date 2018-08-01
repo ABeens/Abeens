@@ -119,7 +119,7 @@ function GetEndDate(date,daysToAdd){
     var currYear = date.getFullYear();
     var currDay=date.getDate();
     var currentDate = new Date(currYear, currMonth, currDay);
-    currentDate.setDate(date.getDate() + Number(daysToAdd));
+    currentDate.setDate(date.getDate() + Number(daysToAdd)-1);
     return currentDate;
 }
 
@@ -146,6 +146,10 @@ function Process(){
 	}
 	if(isNaN(daysToShow)){
 		alert('Need a valid number of days to show in field');
+		return false;
+	}
+	if(Number(daysToShow)<=0){
+		alert('Need a positive integer');
 		return false;
 	}
 
